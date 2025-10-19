@@ -10,10 +10,9 @@ class DriverSetup:
     @staticmethod
     def get_driver():
         chrome_options = Options()
-        chrome_options.add_argument('--no-sandbox')  # отключает режим песочницы
-        # chrome_options.add_argument('--disable-dev-shm-usage')  # для Докера
-        chrome_options.add_argument('--headless')  # Запускает браузер без графического интерфейса
-        chrome_options.add_argument('--disable-gpu')  # Отключает аппаратное ускорение (GPU)
+        chrome_options.add_argument('--no-sandbox')
+        chrome_options.add_argument('--headless')
+        chrome_options.add_argument('--disable-gpu')
 
         service = Service(ChromeDriverManager().install())
 

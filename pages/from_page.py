@@ -5,11 +5,6 @@ from selenium.webdriver.support.ui import WebDriverWait
 
 
 class FormPage:
-    def __init__(self, driver):
-        self.driver = driver
-        self.wait = WebDriverWait(driver, 15)
-        self.url = "https://practice-automation.com/form-fields/"
-
     NAME_FIELD = (By.ID, "name-input")
     PASSWORD_FIELD = (By.CSS_SELECTOR, "input[type='password']")
 
@@ -29,6 +24,11 @@ class FormPage:
 
     # Секция с инструментами автоматизации
     AUTOMATION_TOOLS_SECTION = (By.XPATH, "//*[@id='feedbackForm']/ul")
+
+    def __init__(self, driver):
+        self.driver = driver
+        self.wait = WebDriverWait(driver, 15)
+        self.url = "https://practice-automation.com/form-fields/"
 
     def open_page(self):
         self.driver.get(self.url)
